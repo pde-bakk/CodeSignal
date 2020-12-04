@@ -16,10 +16,11 @@
 //         prev = l;
 //         l = l->next;
 //     }
+//	   if (prev == NULL)
+//     	   return (l);
 //     prev->next = NULL;
 //     l->next = head;
-//     head = l;
-//     return rearrangeLastN(head, n - 1);
+//     return rearrangeLastN(l, n - 1);
 // }
 
 ListNode<int>* rearrangeLastN(ListNode<int>* l, int n) {

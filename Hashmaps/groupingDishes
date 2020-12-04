@@ -1,0 +1,23 @@
+vector<vector<string>> groupingDishes(vector<vector<string>> dishes) {
+    map<string, list<string>> m;
+
+    for (auto& it : dishes) {
+        for (size_t i = 1; i < it.size(); i++) {
+            m[it[i]].push_back(it[0]);
+        }
+    }
+    cout << "here" << endl;
+    vector<vector<string>> out;
+    for (auto& it : m) {
+        if (it.second.size() < 2)
+            continue;
+        vector<string> a;
+        a.push_back(it.first);
+        it.second.sort();
+        for (auto& d : it.second)
+            a.push_back(d);
+        out.push_back(a);
+    }
+    cout << "size is " << out.size() << endl;
+    return out;
+}
